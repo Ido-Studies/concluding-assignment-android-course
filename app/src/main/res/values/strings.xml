@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Mobile MiniGames</string>
+    <string name="background_image_desc">background image for homepage</string>
+    <string name="mainTitle">Mini Games</string>
+    <string name="btnLogin_txt">Log in</string>
+    <string name="btnLeaderboards_txt">Leaderboards</string>
+    <string name="btnGame1_txt">First Game</string>
+    <string name="btnGame2_txt">Second Game</string>
+    <string name="btnGame3_txt">Third Game</string>
 </resources>
