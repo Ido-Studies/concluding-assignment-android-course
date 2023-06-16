@@ -2,6 +2,7 @@ package com.idoisraeli.mobileminigames;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +15,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button[] gameButtons = {
+                (Button) findViewById(R.id.btnGame1)
+        };
+
+        gameButtons[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FlappyBirdActivity.class));
+            }
+        });
+
         Button[] deadEndButtons = {
                 (Button) findViewById(R.id.btnLogin),
                 (Button) findViewById(R.id.btnLeaderboards),
-                (Button) findViewById(R.id.btnGame1),
+//                (Button) findViewById(R.id.btnGame1),
                 (Button) findViewById(R.id.btnGame2),
                 (Button) findViewById(R.id.btnGame3),
         };
