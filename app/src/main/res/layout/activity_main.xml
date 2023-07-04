@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/background_image_desc"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background_1" />
+        app:srcCompat="@drawable/main_background_1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

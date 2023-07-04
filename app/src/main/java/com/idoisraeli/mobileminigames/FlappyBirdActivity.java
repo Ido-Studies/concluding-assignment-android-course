@@ -22,6 +22,9 @@ public class FlappyBirdActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(FlappyBirdActivity.this, "Let's Play", Toast.LENGTH_SHORT).show();
+                ImageView gameTitle = findViewById(R.id.flappyBirdGameTitle);
+                gameTitle.setVisibility(View.GONE);
+                view.setVisibility(View.GONE);
             }
         });
     }
