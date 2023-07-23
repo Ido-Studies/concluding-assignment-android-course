@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class LoadingScreenActivity extends AppCompatActivity {
 
     private int delay = 3000;
+    private ImageView loadingImageView;
     private final int [] tetroidsDrawableIds = {
             R.drawable.line_piece,
             R.drawable.square_piece,
@@ -29,33 +30,89 @@ public class LoadingScreenActivity extends AppCompatActivity {
     };
 
     private int tetroidIdx = 0;
-    private ConstraintLayout layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading_screen);
 
-        this.layout = findViewById(R.id.loadingScreenLayout);
+        loadingImageView = findViewById(R.id.loadingImageView);
+        rotateImages();
+    }
 
-        ImageView item = (ImageView) findViewById(R.id.loadingScreenItemImgView);
+    private void rotateImages() {
+        if (tetroidIdx >= tetroidsDrawableIds.length) {
+            // Switch to the next activity once all images are rotated
+            switchToNextActivity();
+            return;
+        }
 
-        RotateAnimation rotateAnimation = new RotateAnimation(0, 360f,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f);
-        rotateAnimation.setDuration(delay/tetroidsDrawableIds.length);
-//        rotateAnimation.setDuration(5000);
+        loadingImageView.setImageResource(tetroidsDrawableIds[tetroidIdx]);
+        tetroidIdx++;
 
-        Button changeTetroidBtn = (Button) findViewById(R.id.changeTetroidButton);
-        changeTetroidBtn.setOnClickListener(new View.OnClickListener() {
+        // Delay before rotating to the next image
+        long delayMillis = 1000;
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                item.setImageResource(tetroidsDrawableIds[tetroidIdx]);
-                item.startAnimation(rotateAnimation);
-                if((++tetroidIdx) >= tetroidsDrawableIds.length)
-                    tetroidIdx = 0;
+            public void run() {
+                rotateImages();
             }
-        });
+        }, delayMillis);
+    }
+
+    private void switchToNextActivity() {
+        // Replace NextActivity.class with the class of the next activity you want to start
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+        // Finish the current activity to prevent the user from navigating back to it
+        finish();
+    }
+
+//    private ConstraintLayout layout;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_loading_screen);
+//
+//        this.layout = findViewById(R.id.loadingScreenLayout);
+//
+//        ImageView item = (ImageView) findViewById(R.id.loadingScreenItemImgView);
+//
+//        RotateAnimation rotateAnimation = new RotateAnimation(0, 360f,
+//                Animation.RELATIVE_TO_SELF, 0.5f,
+//                Animation.RELATIVE_TO_SELF, 0.5f);
+//        rotateAnimation.setDuration(delay/tetroidsDrawableIds.length);
+////        rotateAnimation.setDuration(5000);
+//
+//        Button changeTetroidBtn = (Button) findViewById(R.id.changeTetroidButton);
+//        changeTetroidBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                item.setImageResource(tetroidsDrawableIds[tetroidIdx]);
+//                item.startAnimation(rotateAnimation);
+//                if((++tetroidIdx) >= tetroidsDrawableIds.length)
+//                    tetroidIdx = 0;
+//            }
+//        });
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    synchronized (this) {
+//                        wait(2000);
+//                        Intent intent = new Intent(LoadingScreenActivity.this, MainActivity.class);
+//                        startActivity(intent);
+//                        finish();
+//                    }
+//                } catch(InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).start();
 
 //        while(tetroidIdx < tetroidsDrawableIds.length){
 //            if(!rotateAnimation.hasEnded())
@@ -162,32 +219,38 @@ public class LoadingScreenActivity extends AppCompatActivity {
 //                }
 //            }
 //        }).start();
-    }
+//    }
 
-    public void setDelay(int delay) {
-        if(delay > 0)
-            this.delay = delay;
-    }
-
-    private void animateRotation(ImageView img, RotateAnimation rotateAnimation) {
-        img.startAnimation(rotateAnimation);
-    }
-
-    private void startAnimation(){
-        ImageView loadingScreenPieceImgView = new ImageView(LoadingScreenActivity.this);
-        loadingScreenPieceImgView.setAdjustViewBounds(true);
-        loadingScreenPieceImgView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
-//        loadingScreenPieceImgView.setImageResource(tetroidsDrawableIds[0]);
-        loadingScreenPieceImgView.setImageResource(R.drawable.line_piece);
-
-        int width = 100;//ConstraintLayout.LayoutParams.MATCH_PARENT;
-        int height = 100;//ConstraintLayout.LayoutParams.MATCH_PARENT;
-        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(width, height);
-//        layoutParams.setMargins(0, 10, 0, 10);
-
-        loadingScreenPieceImgView.setLayoutParams(layoutParams);
-
-        layout.addView(loadingScreenPieceImgView);
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//    }
+//
+//    public void setDelay(int delay) {
+//        if(delay > 0)
+//            this.delay = delay;
+//    }
+//
+//    private void animateRotation(ImageView img, RotateAnimation rotateAnimation) {
+//        img.startAnimation(rotateAnimation);
+//    }
+//
+//    private void startAnimation(){
+//        ImageView loadingScreenPieceImgView = new ImageView(LoadingScreenActivity.this);
+//        loadingScreenPieceImgView.setAdjustViewBounds(true);
+//        loadingScreenPieceImgView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+//
+////        loadingScreenPieceImgView.setImageResource(tetroidsDrawableIds[0]);
+//        loadingScreenPieceImgView.setImageResource(R.drawable.line_piece);
+//
+//        int width = 100;//ConstraintLayout.LayoutParams.MATCH_PARENT;
+//        int height = 100;//ConstraintLayout.LayoutParams.MATCH_PARENT;
+//        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(width, height);
+////        layoutParams.setMargins(0, 10, 0, 10);
+//
+//        loadingScreenPieceImgView.setLayoutParams(layoutParams);
+//
+//        layout.addView(loadingScreenPieceImgView);
+//    }
 }
