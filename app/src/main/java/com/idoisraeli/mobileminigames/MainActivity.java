@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(MainActivity.this, "onCreate() of MainActivity", Toast.LENGTH_SHORT).show();
 
         Button[] gameButtons = {
                 (Button) findViewById(R.id.btnGame1)
@@ -45,5 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 deadEndButtons) {
             btn.setOnClickListener(partNotReady);
         }
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Toast.makeText(MainActivity.this, "onStart() of MainActivity", Toast.LENGTH_SHORT).show();
     }
 }

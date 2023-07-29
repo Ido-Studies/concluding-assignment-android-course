@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/loadingScreenLayout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#866EB1"-->
+<!--    tools:context=".LoadingScreenActivity" >-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/loadingScreenItemImgView"-->
+<!--        android:layout_width="83dp"-->
+<!--        android:layout_height="78dp"-->
+<!--        android:adjustViewBounds="true"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/line_piece" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/changeTetroidButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="173dp"-->
+<!--        android:layout_marginBottom="105dp"-->
+<!--        android:text="Button"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/loadingScreenItemImgView" />-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!-- activity_loading_screen.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/loadingImageView"
+        android:layout_width="@dimen/loading_image_size"
+        android:layout_height="@dimen/loading_image_size"
+        android:layout_gravity="center"
+        android:src="@drawable/line_piece"
+        android:scaleType="centerInside" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="invisible" />
+
+</FrameLayout>
