@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(MainActivity.this, "onCreate() of MainActivity", Toast.LENGTH_SHORT).show();
 
         Button loginBtn = (Button) findViewById(R.id.btnLogin);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +58,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        Toast.makeText(MainActivity.this, "onStart() of MainActivity", Toast.LENGTH_SHORT).show();
     }
 }
