@@ -22,7 +22,18 @@ public class User {
         this.phone = phone;
     }
 
-//    public class GameStats {
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", fullname='" + fullname + '\'' +
+                ", age=" + age +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
+    //    public class GameStats {
 //        public int numberOfGamesPlayed = 0;
 //        public int highScore = 0;
 //    }

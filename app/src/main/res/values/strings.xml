@@ -7,4 +7,9 @@
     <string name="btnGame1_txt">Flappy Bird</string>
     <string name="btnGame2_txt">Second Game</string>
     <string name="btnGame3_txt">Third Game</string>
+    <string name="full_name">Full-Name</string>
+    <string name="nickname">Nickname</string>
+    <string name="email_address">Email-Address</string>
+    <string name="phone_number">Phone-Number</string>
+    <string name="age">Age</string>
 </resources>
