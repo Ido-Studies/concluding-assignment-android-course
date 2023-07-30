@@ -178,18 +178,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username:"
+        android:text="Email:"
         android:textColor="#000"
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginHorizontal="20dp"
         />
     <EditText
-        android:id="@+id/usernameInput"
+        android:id="@+id/emailInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="8dp"
+        android:inputType="textEmailAddress"
         />
 
     <TextView
