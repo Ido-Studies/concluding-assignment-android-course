@@ -174,18 +174,12 @@ public class RegisterActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            Toast.makeText(RegisterActivity.this,
-                                    "Passed Validations",
-                                    Toast.LENGTH_SHORT).show();
                             FirebaseUser firebaseUser = auth.getCurrentUser();
                             User user = new User(email, nickname, age, phone, firstname, lastname);
                             DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
                             reference.child(firebaseUser.getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    Toast.makeText(RegisterActivity.this,
-                                            "User Created",
-                                            Toast.LENGTH_SHORT).show();
                                     sendSms(user.phone, "Thank you " + user.fullname + " for the registration!");
                                 }
                             });
