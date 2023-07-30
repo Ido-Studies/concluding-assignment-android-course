@@ -3,6 +3,7 @@ package com.idoisraeli.mobileminigames;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
+import android.telephony.SmsManager;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -185,11 +186,27 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(RegisterActivity.this,
                                             "User Created",
                                             Toast.LENGTH_SHORT).show();
+                                    sendSms(user.phone, "Thank you " + user.fullname + " for the registration!");
                                 }
                             });
                         }
                     }
                 });
+    }
+
+    private void sendSms(String phoneNumber, String msg) {
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNumber, null, msg, null, null);
+            Toast.makeText(RegisterActivity.this,
+                    "Message Sent to " + phoneNumber,
+                    Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(RegisterActivity.this,
+                    e.getMessage(),
+                    Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
     }
 
 }
