@@ -16,6 +16,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toast.makeText(MainActivity.this, "onCreate() of MainActivity", Toast.LENGTH_SHORT).show();
 
+        Button loginBtn = (Button) findViewById(R.id.btnLogin);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+
         Button[] gameButtons = {
                 (Button) findViewById(R.id.btnGame1)
         };
@@ -28,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button[] deadEndButtons = {
-                (Button) findViewById(R.id.btnLogin),
+//                (Button) findViewById(R.id.btnLogin),
                 (Button) findViewById(R.id.btnLeaderboards),
 //                (Button) findViewById(R.id.btnGame1),
                 (Button) findViewById(R.id.btnGame2),
