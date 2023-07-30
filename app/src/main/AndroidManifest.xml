@@ -2,14 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-<!--
-    In order to support Right to Left add:
-    android:supportsRtl="true"
-    under android:roundIcon within the application tag.
-    Note that doing so will make layouts horizontally reversed for devices that have the default
-    language set to Hebrew (or any other RTL language).
--->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.MobileMiniGames"
         tools:targetApi="31">
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".LoadingScreenActivity"
             android:exported="true"

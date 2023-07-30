@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/flappy_bird_background"
+        android:layout_marginBottom="30dp">
+
+        <Button
+            android:id="@+id/goBackButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/completely_rounded_button"
+            android:text="&lt;"
+            android:textSize="30sp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Register an Account"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
+        android:stretchColumns="1">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Name:"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_column="0"
+                />
+            <EditText
+                android:id="@+id/firstNameInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="4dp"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Name:"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_column="0"
+                />
+            <EditText
+                android:id="@+id/lastNameInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="4dp"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nickname:"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_column="0"
+                />
+            <EditText
+                android:id="@+id/nicknameInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="4dp"
+                />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age:"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <EditText
+            android:id="@+id/ageInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="3"
+            android:inputType="numberSigned"
+            android:layout_marginLeft="4dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="8dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone number:"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-condensed"
+            />
+
+        <EditText
+            android:id="@+id/phoneNumberInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_marginLeft="4dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginHorizontal="20dp"
+        />
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginHorizontal="20dp"
+        />
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Register"
+            android:layout_marginHorizontal="110dp"
+            android:textSize="20sp"
+            android:backgroundTint="@color/dark_orange"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
