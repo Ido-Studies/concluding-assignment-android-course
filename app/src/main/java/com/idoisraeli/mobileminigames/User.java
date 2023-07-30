@@ -1,7 +1,7 @@
 package com.idoisraeli.mobileminigames;
 
 public class User {
-    public String username;
+    public String email;
     public String nickname;
     public String fullname;
     public int age;
@@ -14,8 +14,8 @@ public class User {
         // Required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String username, String nickname, int age, String phone, String firstname, String lastname) {
-        this.username = username;
+    public User(String email, String nickname, int age, String phone, String firstname, String lastname) {
+        this.email = email;
         this.nickname = nickname;
         this.fullname = firstname + " " + lastname;
         this.age = age;
