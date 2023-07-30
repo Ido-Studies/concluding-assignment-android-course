@@ -34,10 +34,7 @@ public class MainActivity extends AppCompatActivity {
             loginBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                    Toast.makeText(MainActivity.this,
-                            "Welcome " + userNickname,
-                            Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 }
             });
         }
