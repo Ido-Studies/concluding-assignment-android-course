@@ -3,6 +3,7 @@ package com.idoisraeli.mobileminigames;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,10 +11,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String userNickname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences sp = getSharedPreferences("MobileMiniGames", 0);
+        userNickname = sp.getString("User_Nickname", null);
+//        Toast.makeText(MainActivity.this,
+//                "Welcome " + userNickname,
+//                Toast.LENGTH_SHORT).show();
 
         Button loginBtn = (Button) findViewById(R.id.btnLogin);
         loginBtn.setOnClickListener(new View.OnClickListener() {

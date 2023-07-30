@@ -1,6 +1,7 @@
 package com.idoisraeli.mobileminigames;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.SmsManager;
@@ -180,7 +181,17 @@ public class RegisterActivity extends AppCompatActivity {
                             reference.child(firebaseUser.getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
+                                    SharedPreferences sp = getSharedPreferences("MobileMiniGames", 0);
+                                    SharedPreferences.Editor sedt = sp.edit();
+                                    sedt.putString("User_Uid", firebaseUser.getUid());
+                                    sedt.putString("User_Nickname", user.nickname);
+                                    sedt.apply();
+
                                     sendSms(user.phone, "Thank you " + user.fullname + " for the registration!");
+                                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
+                                    // Finish the current activity to prevent the user from navigating back to it
+                                    finish();
                                 }
                             });
                         }
