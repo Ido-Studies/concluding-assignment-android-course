@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "142262542749",
+    "project_id": "mobile-mini-games",
+    "storage_bucket": "mobile-mini-games.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142262542749:android:04119d6de955edea364f74",
+        "android_client_info": {
+          "package_name": "com.idoisraeli.mobileminigames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142262542749-1j3a2ao57m1fcifmed455iht9onrl1dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADXkQEgSESlZ470xd3eJBqyyRkOiHmxI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142262542749-1j3a2ao57m1fcifmed455iht9onrl1dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
