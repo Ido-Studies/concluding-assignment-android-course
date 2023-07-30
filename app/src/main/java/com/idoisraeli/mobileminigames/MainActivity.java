@@ -20,17 +20,28 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("MobileMiniGames", 0);
         userNickname = sp.getString("User_Nickname", null);
-//        Toast.makeText(MainActivity.this,
-//                "Welcome " + userNickname,
-//                Toast.LENGTH_SHORT).show();
 
         Button loginBtn = (Button) findViewById(R.id.btnLogin);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
-        });
+        if(userNickname == null) {
+            loginBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                }
+            });
+        } else {
+            loginBtn.setText(userNickname);
+            loginBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                    Toast.makeText(MainActivity.this,
+                            "Welcome " + userNickname,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
 
         Button[] gameButtons = {
                 (Button) findViewById(R.id.btnGame1)
